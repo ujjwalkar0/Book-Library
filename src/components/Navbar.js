@@ -1,23 +1,22 @@
 import logo from "../images/fylelogo.png";
 
-export default function Navbar({name}){
+export default function Navbar({ name }) {
     return (
         <ul className="navbar">
             <div className="container">
                 <a href="/">
-                    <img src={logo} width="90px"/>
+                    <img src={logo} width="90px" />
                 </a>
-            <div className="right">
-            <select id="category" onChange={(e) => window.location.href=e.target.value} value={name}>
-                <option value="" hidden>Select a Subject...</option>
-                <option value="love">Love</option>
-                <option value="programming">Programming</option>
-                <option value="entrepreneurship">Entrepreneurship</option>
-                <option value="mental_health">Mental Health</option>
-                <option value="self_help">Self Help</option>
-            </select>
+                <div className="right">
+                    <select id="category" onChange={(e) => window.location.href = e.target.value} value={name}>
+                        <option value="" hidden>Select a Subject...</option>
+                        <option value="healthcare">Healthcare</option>
+                        <option value="public_health">Public Health</option>
+                        <option value="mental_health">Mental Health</option>
+                        <option value="medical_care">Medical Care</option>
+                    </select>
+                </div>
             </div>
-            </div>
-            </ul>
+        </ul>
     )
 }

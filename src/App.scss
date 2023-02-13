@@ -71,6 +71,17 @@ ul.navbar {
 
 }
 
+.bookimage{
+  padding: 10px;
+  &:hover{
+    padding: 0px;
+  }
+}
+
+.bookSection{
+  padding: 0px;
+  margin: 8px 0px;
+}
 
 // li.navbar {
 //   float: left;

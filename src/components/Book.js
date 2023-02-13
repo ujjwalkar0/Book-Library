@@ -1,16 +1,37 @@
-import { Card } from "react-bootstrap";
+import { Card, Row, Col } from "react-bootstrap";
 
-export default function Book(params){
-    return(
-    <Card style={{ width: '13rem'}}>
-      <Card.Img variant="top" src={`https://covers.openlibrary.org/b/id/${params.cover_id}-M.jpg`} height="250px"/>
+function Author(params) {
+
+  var author_name = "";
+  try {
+    author_name = params.author_name.map((e) => e.name).join();
+  }
+  catch {
+    author_name = params.author_name;
+  }
+
+  // params.author_name.map((e)=>console.log(e.name))
+
+  return (
+    <>{author_name}</>
+  )
+}
+
+export default function Book(params) {
+  return (
+    <Card className="bookSection">
       <Card.Body>
-        <Card.Title>{params.name}</Card.Title>
-        {/* <Card.Text>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </Card.Text> */}
-        {/* <Button variant="primary">Go somewhere</Button> */}
+        <Row>
+          <Card.Img variant="top" src={`https://covers.openlibrary.org/b/id/${params.cover_id}-M.jpg`} height="250px" className="bookimage" />
+        </Row>
+        <div style={{ height: "120px", }}>
+          <Card.Title style={{ textAlign: "left", fontSize: "15px" }}>
+            {params.name}
+          </Card.Title>
+          <p style={{overflowY:"scroll"}}>
+            By - {params.author_name? params.author_name:params.authors? params.authors.map((e)=>e.name).join() :""} 
+          </p>
+        </div>
       </Card.Body>
     </Card>
   )
