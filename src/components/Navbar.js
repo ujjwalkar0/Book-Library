@@ -10,10 +10,11 @@ export default function Navbar({ name }) {
                 <div className="right">
                     <select id="category" onChange={(e) => window.location.href = e.target.value} value={name}>
                         <option value="" hidden>Select a Subject...</option>
-                        <option value="healthcare">Healthcare</option>
+                        <option value="horror">Horror</option>
                         <option value="public_health">Public Health</option>
                         <option value="mental_health">Mental Health</option>
                         <option value="medical_care">Medical Care</option>
+                        <option value="psychology">Psychology</option>
                     </select>
                 </div>
             </div>

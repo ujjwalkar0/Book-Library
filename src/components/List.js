@@ -6,7 +6,7 @@ export default function List(props) {
     return (
         <Container>
             <center>
-                <h1>List of Books...</h1>
+                <h3>{props.heading}</h3>
                 <Row>
                     {props.children}
                 </Row>

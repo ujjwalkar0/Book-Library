@@ -1,7 +1,9 @@
 export default function Footer(params) {
     return (
-        <div className="footer">
-            Created by Ujjwal Kar
-        </div>
+        <footer className="footer">
+            <center>
+                Created by Ujjwal Kar
+            </center>
+        </footer>
     )
 }

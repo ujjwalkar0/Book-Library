@@ -7,6 +7,7 @@ import {Row, Col, Container } from "react-bootstrap";
 import List from "../components/List";
 import Book from "../components/Book";
 import Footer from "../components/Footer";
+import Loading from "../components/Loading";
 
 
 export function Subject(props) {
@@ -20,13 +21,15 @@ export function Subject(props) {
             .then(data => setBooks(data))
     }, [])
 
-    const [searchParams] = useSearchParams();
+    // const subject_name = 
+    // console.log(subject.split("_").apply((e)=>e)) //.apply((e)=>e.charAt(0).toUpperCase() + e.slice(1)).join(" "))
+
     return(
         <>
         <Navbar name={subject}/>
         <Banner/>
-        <List>
-            {books.works.map((e) => <Col md={2}><Book name={e.title} cover_id={e.cover_id} authors={e.authors} /></Col>)}
+        <List heading={`Books related to ${subject.split("_").join(" ")}`}>
+            {books.works.length>1? books.works.map((e) => <Col md={2}><Book name={e.title} cover_id={e.cover_id} authors={e.authors} /></Col>): <Loading/>}
         </List>
         <Footer/>
         </>
